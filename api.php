@@ -79,7 +79,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'accept-encoding: gzip, deflate, br', 
 'content-type: application/x-www-form-urlencoded',
 'origin: https://js.stripe.com',
-'referer: https://js.stripe.com/v3/payment-request-inner-browser-50b562205ed923d558cd71a09aaf1f3e.html',
+'referer: https://payments.spektrix.com/website?clientName=chichesterfestivaltheatre&feature=webpayment%3a245_heo2foewk2u4zevalgbnytr4%2chttps%3a%2f%2fwww.cft.org.uk%2fboxoffice%2fcheckout%2cFalse&paymentCommandId=17609674&hash=omXUnbIz9VJTEZXBOrcn93%2bC1OdxkzceKXmi4MbZhiI%3d&culture=en-GB&spektrixUrl=tickets.cft.org.uk&stylesheet=cft.css',
 'sec-fetch-dest: empty',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-site'));
