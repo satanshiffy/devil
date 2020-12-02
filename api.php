@@ -79,7 +79,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'accept-encoding: gzip, deflate, br', 
 'content-type: application/x-www-form-urlencoded',
 'origin: https://js.stripe.com',
-'referer: https://js.stripe.com/',
+'referer: https://js.stripe.com/v3/payment-request-inner-browser-50b562205ed923d558cd71a09aaf1f3e.html',
 'sec-fetch-dest: empty',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-site'));
@@ -110,7 +110,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'accept-encoding: gzip, deflate, br', 
 'content-type: application/x-www-form-urlencoded',
 'origin: https://js.stripe.com',
-'referer: https://js.stripe.com/',
+'referer: https://js.stripe.com/v3/payment-request-inner-browser-50b562205ed923d558cd71a09aaf1f3e.html',
 'accept: application/json',
 'accept-encoding: gzip, deflate, br', 
 'content-type: application/x-www-form-urlencoded',
